@@ -27,16 +27,102 @@ val isDigit = char.isDigit()
 val isLetter = char.isLetter()
 
 // Letter case
-val isUpperCase = char.isUpperCase()
-val upperCase = char.uppercaseChar() // or uppercase() which returs String
-val isLowerCase = char.isLowerCase()
-val lowerCase = char.lowercaseChar() // or lowercase() which returns String
+val isUpperCase = char.isUpperCase() // isLowerCase()
+val upperCase = char.uppercaseChar() // lowercaseChar() or uppercase() / lowercase() which returns String
+```
+
+```Kotlin
+// String
+
+val length = string.length // not size
+val substring = string.substring(from, to) // [from, to) - from inclusive, to exclusive
+val split: Array<String> = string.split(":", ",", "-")
+val join = arrayOf("abc", "dfg", "123").joinToString(separator = ", ", prefix = "", postfix = "")
+```
+
+```Kotlin
+// Indexing
+
+val first = list.first() // works with List, Array, String
+val last = list.last()
+
+val lastIndex = list.lastIndex // works with List, Array, String
+
+for (item in list) {} // works with List, Array, String
+for ((index, item) in list.withIndex()) {}
+for (index in 0 until list.size) {} // alternatives 0..list.lastIndex or list.indices
+
+```
+
+```Kotlin
+// Array
+
+
+```
+
+```Kotlin
+// Map
+
+getOrDefault()
+```
+
+```Kotlin
+// List
+
+// Be careful when you need mutable and immutable lists
+val list = listOf(1, 2, 3) // immutable
+val mutableList = mutableListOf(1, 2, 3) // mutable
+
+// Most operations similar for mutable and immutable, but one in-place and other returns new list.
+// Operation names differ by d/ed
+val sortedList = list.sorted() // sorts from min to max
+mutableList.sort() // in-place sort
+
+sortBy
+
+sortWith (comparator and thenBy)
+
+find / filter / map / reverse ?
+``` 
+
+```Kotlin
+// Stack - there are many alternatives like LinkedList, but ArrayList allows easy postprocessing with random access
+
+val stack = mutableListOf<Int>()
+stack.add(0)
+val topPop = stack.removeLast() // removeLastOrNull() do not throws NoSuchElementException
+val topElement = stack.last()
+```
+
+```Kotlin
+// Queue
+
+val queue = LinkedList<Int>()
+queue.offer(0) // adds to the tail
+val next = queue.poll() // removes from the head and returns
+val nextPeek = queue.peek() // only returns from the head
+```
+
+```Kotlin
+// Priority queue
+
+val priorityQueue = PriorityQueue<Int>() // head is the least element
+priorityQueue.offer(0) // adds to the tail
+val next = priorityQueue.poll() // removes from the head and returns
+val nextPeek = priorityQueue.peek() // only returns from the head
+```
+
+```Kotlin
+// Bit manipulation - different than in Java
+
+// Simple operators - and, or, xor
+// Not - value.inv()
+// Shifts - shl (signed shift left), shr, ushr (unsigned shift right)
 ```
 
 ## Practice
 
 Practice makes it perfect. You can solve the following Leetcode problems covering the cheat sheet APIs.
 
-| Problem | Labels |
-| --- | --- |
-| TBD | TBD |
+https://www.techinterviewhandbook.org/grind75
+
