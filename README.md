@@ -14,9 +14,8 @@ The repository is open to contribution. To add the API, fork the repo and create
 
 ## Cheatsheet
 
+### Char
 ```Kotlin
-// Char
-
 // Code value - chat.toInt() returns the same, but it is deprecated
 val code = char.code
 // Digit value
@@ -31,18 +30,16 @@ val isUpperCase = char.isUpperCase() // isLowerCase()
 val upperCase = char.uppercaseChar() // lowercaseChar() or uppercase() / lowercase() which returns String
 ```
 
+### String
 ```Kotlin
-// String
-
 val length = string.length // not size
 val substring = string.substring(from, to) // [from, to) - from inclusive, to exclusive
 val split: Array<String> = string.split(":", ",", "-")
 val join = arrayOf("abc", "dfg", "123").joinToString(separator = ", ", prefix = "", postfix = "")
 ```
 
+### Indexing
 ```Kotlin
-// Indexing
-
 val first = list.first() // works with List, Array, String
 val last = list.last()
 
@@ -66,9 +63,8 @@ for (index in 0 until list.size) {} // alternatives 0..list.lastIndex or list.in
 getOrDefault()
 ```
 
+### List
 ```Kotlin
-// List
-
 // Be careful when you need mutable and immutable lists
 val list = listOf(1, 2, 3) // immutable
 val mutableList = mutableListOf(1, 2, 3) // mutable
@@ -85,40 +81,38 @@ sortWith (comparator and thenBy)
 find / filter / map / reverse ?
 ``` 
 
+### Stack
 ```Kotlin
-// Stack - there are many alternatives like LinkedList, but ArrayList allows easy postprocessing with random access
-
+// There are many alternatives like LinkedList, but ArrayList allows easy postprocessing with random access
 val stack = mutableListOf<Int>()
 stack.add(0)
 val topPop = stack.removeLast() // removeLastOrNull() do not throws NoSuchElementException
 val topElement = stack.last()
 ```
 
+### Queue
 ```Kotlin
-// Queue
-
 val queue = LinkedList<Int>()
 queue.offer(0) // adds to the tail
 val next = queue.poll() // removes from the head and returns
 val nextPeek = queue.peek() // only returns from the head
 ```
 
+### Priority queue
 ```Kotlin
-// Priority queue
-
 val priorityQueue = PriorityQueue<Int>() // head is the least element
 priorityQueue.offer(0) // adds to the tail
 val next = priorityQueue.poll() // removes from the head and returns
 val nextPeek = priorityQueue.peek() // only returns from the head
 ```
 
-```Kotlin
-// Bit manipulation - different than in Java
+### Bit manipulation - different from Java
 
-// Simple operators - and, or, xor
-// Not - value.inv()
-// Shifts - shl (signed shift left), shr, ushr (unsigned shift right)
-```
+Simple operators - `and`, `or`, `xor`
+
+Not - `value.inv()`
+
+Shifts - `shl` (signed shift left), `shr`, `ushr` (unsigned shift right)
 
 ## Practice
 
