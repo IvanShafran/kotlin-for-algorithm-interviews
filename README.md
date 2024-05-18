@@ -1,4 +1,4 @@
-# Kotlin for algorithm interviews (In Progress - Join to Contribute)
+# Kotlin for algorithm interviews
 
 ## Content here
 
@@ -27,7 +27,7 @@ val isLetter = char.isLetter()
 
 // Letter case
 val isUpperCase = char.isUpperCase() // isLowerCase()
-val upperCase = char.uppercaseChar() // lowercaseChar() or uppercase() / lowercase() which returns String
+val upperCase = char.uppercaseChar() // uppercase() which returns String
 ```
 
 ### String
@@ -36,6 +36,7 @@ val length = string.length // not size
 val substring = string.substring(from, to) // [from, to) - from inclusive, to exclusive
 val split: Array<String> = string.split(":", ",", "-")
 val join = arrayOf("abc", "dfg", "123").joinToString(separator = ", ", prefix = "", postfix = "")
+val replaced = "abc123abc".replace("ab", "qw") // -> "qwc123qwc"
 ```
 
 ### Indexing
@@ -48,19 +49,24 @@ val lastIndex = list.lastIndex // works with List, Array, String
 for (item in list) {} // works with List, Array, String
 for ((index, item) in list.withIndex()) {}
 for (index in 0 until list.size) {} // alternatives 0..list.lastIndex or list.indices
-
+for (index in 5 downTo 0) {} // 5 4 3 2 1 0
+for (index in list.indices.reversed()) {} // reversed indexing
 ```
 
+### Array
 ```Kotlin
-// Array
-
-
+val array = arrayOf(1, 2, 3)
+val array = Array<Int>(3) { i -> i } // 1, 2, 3
+val array: Array<Int?> = arrayOfNulls(3) // null null null
+val list = array.toList()
+val array = list.toTypedArray()
+val intArray = IntArray(3) // 0 0 0 - primitive int array
 ```
 
+### Map
 ```Kotlin
-// Map
-
-getOrDefault()
+val map = mutableMapOf<String, Int>()
+val default = map.getOrDefault("key", 0)
 ```
 
 ### List
@@ -69,21 +75,28 @@ getOrDefault()
 val list = listOf(1, 2, 3) // immutable
 val mutableList = mutableListOf(1, 2, 3) // mutable
 
-// Most operations similar for mutable and immutable, but one in-place and other returns new list.
-// Operation names differ by d/ed
-val sortedList = list.sorted() // sorts from min to max
-mutableList.sort() // in-place sort
+// Most operations similar for mutable and immutable,
+// but one in-place and other returns new list.
+// Operation names differ by d/ed ending.
+val reversed = list.reversed()
+mutableList.reverse() // in-place
+```
 
-sortBy
-
-sortWith (comparator and thenBy)
-
-find / filter / map / reverse ?
+### Sort
+```Kotlin
+mutableList.sort() // min to max
+mutableList.sortByDescending() // max to min
+mutableList.sortBy { it * it } // min to max by expession
+studens.sortWith(
+  compareBy { it.grade }
+  .thenByDesceding { it.name }
+) // min to max with comparator
 ``` 
 
 ### Stack
 ```Kotlin
-// There are many alternatives like LinkedList, but ArrayList allows easy postprocessing with random access
+// There are many alternatives like LinkedList,
+// but ArrayList allows easy postprocessing with random access
 val stack = mutableListOf<Int>()
 stack.add(0)
 val topPop = stack.removeLast() // removeLastOrNull() do not throws NoSuchElementException
