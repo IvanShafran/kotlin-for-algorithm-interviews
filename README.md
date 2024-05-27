@@ -65,14 +65,10 @@ val intArray = IntArray(3) // 0 0 0 - primitive int array
 
 ### Map
 ```Kotlin
-val map = mutableMapOf<String, Int>()  //returns LinkedHashMap, maintains insertion order
+val map = mutableMapOf<String, Int>()  // returns LinkedHashMap, maintains insertion order
+val hashMap = HashMap<String, Int>() // returns HashMap, not maintains insertion order
+
 val default = map.getOrDefault("key", 0)
-
-val hashMap = HashMap<String, Int>()  //returns HashMap, not maintains insertion order
-hashMap["key"] = 0 //put operation
-val value = hashMap.getOrDefault("key", 0) //get operation with default value
-
-Note: Set also works like HashMap
 ```
 
 ### List
