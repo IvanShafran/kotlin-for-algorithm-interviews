@@ -15,7 +15,7 @@ The repository is open to contribution. To add the API, fork the repo and create
 ## Cheatsheet
 
 ### Char
-```Kotlin
+```kotlin
 // Code value - chat.toInt() returns the same, but it is deprecated
 val code = char.code
 // Digit value
@@ -31,7 +31,7 @@ val upperCase = char.uppercaseChar() // uppercase() which returns String
 ```
 
 ### String
-```Kotlin
+```kotlin
 val length = string.length // not size
 val substring = string.substring(from, to) // [from, to) - from inclusive, to exclusive
 val split: Array<String> = string.split(":", ",", "-")
@@ -40,7 +40,7 @@ val replaced = "abc123abc".replace("ab", "qw") // -> "qwc123qwc"
 ```
 
 ### Indexing
-```Kotlin
+```kotlin
 val first = list.first() // works with List, Array, String
 val last = list.last()
 
@@ -54,7 +54,7 @@ for (index in list.indices.reversed()) {} // reversed indexing
 ```
 
 ### Array
-```Kotlin
+```kotlin
 val array = arrayOf(1, 2, 3)
 val array = Array<Int>(3) { i -> i } // 1, 2, 3
 val array: Array<Int?> = arrayOfNulls(3) // null null null
@@ -64,7 +64,7 @@ val intArray = IntArray(3) // 0 0 0 - primitive int array
 ```
 
 ### Map
-```Kotlin
+```kotlin
 val map = mutableMapOf<String, Int>()  // returns LinkedHashMap, maintains insertion order
 val hashMap = HashMap<String, Int>() // returns HashMap, not maintains insertion order
 
@@ -72,7 +72,7 @@ val default = map.getOrDefault("key", 0)
 ```
 
 ### List
-```Kotlin
+```kotlin
 // Be careful when you need mutable and immutable lists
 val list = listOf(1, 2, 3) // immutable
 val mutableList = mutableListOf(1, 2, 3) // mutable
@@ -85,7 +85,7 @@ mutableList.reverse() // in-place
 ```
 
 ### Sort
-```Kotlin
+```kotlin
 mutableList.sort() // min to max
 mutableList.sortByDescending() // max to min
 mutableList.sortBy { it * it } // min to max by expession
@@ -96,7 +96,7 @@ studens.sortWith(
 ``` 
 
 ### Stack
-```Kotlin
+```kotlin
 // There are many alternatives like LinkedList,
 // but ArrayList allows easy postprocessing with random access
 val stack = mutableListOf<Int>()
@@ -106,7 +106,7 @@ val topElement = stack.last()
 ```
 
 ### Queue
-```Kotlin
+```kotlin
 val queue = LinkedList<Int>()
 queue.offer(0) // adds to the tail
 val next = queue.poll() // removes from the head and returns
@@ -114,7 +114,7 @@ val nextPeek = queue.peek() // only returns from the head
 ```
 
 ### Priority queue
-```Kotlin
+```kotlin
 val priorityQueue = PriorityQueue<Int>() // head is the least element
 priorityQueue.offer(0) // adds to the tail
 val next = priorityQueue.poll() // removes from the head and returns
